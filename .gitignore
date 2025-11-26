@@ -2,6 +2,9 @@
 !.mvn/wrapper/maven-wrapper.jar
 
 Java
+out
+tests
+INSATALL.md
 
 
 ### STS ###

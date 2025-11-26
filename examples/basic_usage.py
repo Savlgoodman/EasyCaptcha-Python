@@ -10,6 +10,11 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from io import BytesIO
 from easy_captcha import SpecCaptcha, TYPE_ONLY_NUMBER, FONT_1
 
+# 创建输出目录
+OUTPUT_DIR = './out'
+if not os.path.exists(OUTPUT_DIR):
+    os.makedirs(OUTPUT_DIR)
+
 
 def example_1_basic():
     """示例1: 基本使用"""
@@ -25,12 +30,12 @@ def example_1_basic():
     print(f"验证码文本: {code}")
     
     # 输出到文件
-    with open('captcha_basic.png', 'wb') as f:
+    with open(f'{OUTPUT_DIR}/captcha_basic.png', 'wb') as f:
         stream = BytesIO()
         captcha.out(stream)
         f.write(stream.getvalue())
-    
-    print("验证码已保存到: captcha_basic.png")
+
+    print(f"验证码已保存到: {OUTPUT_DIR}/captcha_basic.png")
     print()
 
 
@@ -46,12 +51,12 @@ def example_2_custom_size():
     code = captcha.text()
     print(f"验证码文本: {code}")
     
-    with open('captcha_custom_size.png', 'wb') as f:
+    with open(f'{OUTPUT_DIR}/captcha_custom_size.png', 'wb') as f:
         stream = BytesIO()
         captcha.out(stream)
         f.write(stream.getvalue())
-    
-    print("验证码已保存到: captcha_custom_size.png")
+
+    print(f"验证码已保存到: {OUTPUT_DIR}/captcha_custom_size.png")
     print()
 
 
@@ -67,12 +72,12 @@ def example_3_only_number():
     code = captcha.text()
     print(f"验证码文本: {code}")
     
-    with open('captcha_only_number.png', 'wb') as f:
+    with open(f'{OUTPUT_DIR}/captcha_only_number.png', 'wb') as f:
         stream = BytesIO()
         captcha.out(stream)
         f.write(stream.getvalue())
-    
-    print("验证码已保存到: captcha_only_number.png")
+
+    print(f"验证码已保存到: {OUTPUT_DIR}/captcha_only_number.png")
     print()
 
 
@@ -110,12 +115,12 @@ def example_5_custom_font():
         code = captcha.text()
         print(f"字体{i} - 验证码文本: {code}")
         
-        with open(f'captcha_font_{i}.png', 'wb') as f:
+        with open(f'{OUTPUT_DIR}/captcha_font_{i}.png', 'wb') as f:
             stream = BytesIO()
             captcha.out(stream)
             f.write(stream.getvalue())
-        
-        print(f"验证码已保存到: captcha_font_{i}.png")
+
+        print(f"验证码已保存到: {OUTPUT_DIR}/captcha_font_{i}.png")
     
     print()
 
@@ -130,12 +135,12 @@ def example_6_multiple():
         captcha = SpecCaptcha()
         code = captcha.text()
         
-        with open(f'captcha_batch_{i}.png', 'wb') as f:
+        with open(f'{OUTPUT_DIR}/captcha_batch_{i}.png', 'wb') as f:
             stream = BytesIO()
             captcha.out(stream)
             f.write(stream.getvalue())
-        
-        print(f"验证码 {i+1}: {code} -> captcha_batch_{i}.png")
+
+        print(f"验证码 {i+1}: {code} -> {OUTPUT_DIR}/captcha_batch_{i}.png")
     
     print()
 

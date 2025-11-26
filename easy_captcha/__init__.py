@@ -7,6 +7,10 @@ EasyCaptcha - Python图形验证码生成库
 __version__ = "1.0.0"
 
 from .captcha.spec_captcha import SpecCaptcha
+from .captcha.gif_captcha import GifCaptcha
+from .captcha.chinese_captcha import ChineseCaptcha
+from .captcha.chinese_gif_captcha import ChineseGifCaptcha
+from .captcha.arithmetic_captcha import ArithmeticCaptcha
 from .constants import (
     TYPE_DEFAULT,
     TYPE_ONLY_NUMBER,
@@ -20,6 +24,10 @@ from .constants import (
 
 __all__ = [
     'SpecCaptcha',
+    'GifCaptcha',
+    'ChineseCaptcha',
+    'ChineseGifCaptcha',
+    'ArithmeticCaptcha',
     'TYPE_DEFAULT',
     'TYPE_ONLY_NUMBER',
     'TYPE_ONLY_CHAR',
