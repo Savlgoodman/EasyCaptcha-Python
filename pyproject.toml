@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "easy-captcha-python"
-version = "1.0.0"
+version = "0.1.0"
 description = "Python图形验证码生成库，支持GIF、中文、算术等类型"
 readme = "README.md"
 requires-python = ">=3.7"
 license = {text = "Apache-2.0"}
 authors = [
-    {name = "EasyCaptcha Contributors"}
+    {name = "Kevin Roo", email = "mostvegetableplayer@gmail.com"},
 ]
 keywords = ["captcha", "verification code", "gif", "image", "验证码"]
 classifiers = [
@@ -40,6 +40,6 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/easy-captcha-python"
-Repository = "https://github.com/yourusername/easy-captcha-python"
+Homepage = "https://gitee.com/diamondore/EasyCaptcha-Python"
+Repository = "https://gitee.com/diamondore/EasyCaptcha-Python"
 
