@@ -2,8 +2,8 @@
 
 ![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)
-[![EN](https://img.shields.io/badge/Language-English-blue.svg)](README.md)
-[![中文](https://img.shields.io/badge/Language-中文-green.svg)](README_zh.md)
+
+> 🌐 **语言** | [English](README.md) | [中文](README_zh.md)
 
 Python 图形验证码生成库，支持 GIF、中文、算术等类型，可用于 Python Web、桌面应用等项目。
 
