@@ -2,6 +2,8 @@
 
 ![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)
+[![EN](https://img.shields.io/badge/Language-English-blue.svg)](README.md)
+[![中文](https://img.shields.io/badge/Language-中文-green.svg)](README_zh.md)
 
 Python 图形验证码生成库，支持 GIF、中文、算术等类型，可用于 Python Web、桌面应用等项目。
 
@@ -70,7 +72,7 @@ pip install easy-captcha-python
 ### 3.2.从源码安装
 
 ```bash
-git clone https://github.com/yourusername/easy-captcha-python.git
+git clone https://github.com/Savlgoodman/EasyCaptcha-Python
 cd easy-captcha-python
 pip install -e .
 ```

@@ -2,6 +2,8 @@
 
 ![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)
+[![EN](https://img.shields.io/badge/Language-English-blue.svg)](README.md)
+[![中文](https://img.shields.io/badge/Language-中文-green.svg)](README_zh.md)
 
 Python graphic captcha generation library supporting GIF, Chinese characters, arithmetic, and other types. Suitable for Python Web, desktop applications, and more.
 
