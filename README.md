@@ -3,103 +3,103 @@
 ![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)
 
-Python 图形验证码生成库，支持 GIF、中文、算术等类型，可用于 Python Web、桌面应用等项目。
+Python graphic captcha generation library supporting GIF, Chinese characters, arithmetic, and other types. Suitable for Python Web, desktop applications, and more.
 
-这是 [EasyCaptcha](https://github.com/whvcse/EasyCaptcha) Java 版本的 Python 实现。
-
----
-
-## 1.简介
-
-&emsp;Python 图形验证码，支持 gif、中文、算术等类型，可用于 Flask、Django、FastAPI 等 Web 框架。
+This is a Python implementation of the [EasyCaptcha](https://github.com/whvcse/EasyCaptcha) Java version.
 
 ---
 
-## 2.效果展示
+## 1. Introduction
 
-**PNG 类型：**
-
-![验证码](https://s2.ax1x.com/2019/08/23/msFrE8.png)
-&emsp;&emsp;
-![验证码](https://s2.ax1x.com/2019/08/23/msF0DP.png)
-&emsp;&emsp;
-![验证码](https://s2.ax1x.com/2019/08/23/msFwut.png)
-
-**GIF 类型：**
-
-![验证码](https://s2.ax1x.com/2019/08/23/msFzVK.gif)
-&emsp;&emsp;
-![验证码](https://s2.ax1x.com/2019/08/23/msFvb6.gif)
-&emsp;&emsp;
-![验证码](https://s2.ax1x.com/2019/08/23/msFXK1.gif)
-
-**算术类型：**
-
-![验证码](https://s2.ax1x.com/2019/08/23/mskKPg.png)
-&emsp;&emsp;
-![验证码](https://s2.ax1x.com/2019/08/23/msknIS.png)
-&emsp;&emsp;
-![验证码](https://s2.ax1x.com/2019/08/23/mskma8.png)
-
-**中文类型：**
-
-![验证码](https://s2.ax1x.com/2019/08/23/mskcdK.png)
-&emsp;&emsp;
-![验证码](https://s2.ax1x.com/2019/08/23/msk6Z6.png)
-&emsp;&emsp;
-![验证码](https://s2.ax1x.com/2019/08/23/msksqx.png)
-
-**内置字体：**
-
-![验证码](https://s2.ax1x.com/2019/08/23/msAVSJ.png)
-&emsp;&emsp;
-![验证码](https://s2.ax1x.com/2019/08/23/msAAW4.png)
-&emsp;&emsp;
-![验证码](https://s2.ax1x.com/2019/08/23/msAkYF.png)
+Python graphic captcha supporting GIF, Chinese characters, arithmetic, and other types. Compatible with Flask, Django, FastAPI, and other web frameworks.
 
 ---
 
-## 3.安装
+## 2. Demo
 
-### 3.1.使用 pip 安装
+**PNG Type:**
+
+![Captcha](https://s2.ax1x.com/2019/08/23/msFrE8.png)
+&emsp;&emsp;
+![Captcha](https://s2.ax1x.com/2019/08/23/msF0DP.png)
+&emsp;&emsp;
+![Captcha](https://s2.ax1x.com/2019/08/23/msFwut.png)
+
+**GIF Type:**
+
+![Captcha](https://s2.ax1x.com/2019/08/23/msFzVK.gif)
+&emsp;&emsp;
+![Captcha](https://s2.ax1x.com/2019/08/23/msFvb6.gif)
+&emsp;&emsp;
+![Captcha](https://s2.ax1x.com/2019/08/23/msFXK1.gif)
+
+**Arithmetic Type:**
+
+![Captcha](https://s2.ax1x.com/2019/08/23/mskKPg.png)
+&emsp;&emsp;
+![Captcha](https://s2.ax1x.com/2019/08/23/msknIS.png)
+&emsp;&emsp;
+![Captcha](https://s2.ax1x.com/2019/08/23/mskma8.png)
+
+**Chinese Type:**
+
+![Captcha](https://s2.ax1x.com/2019/08/23/mskcdK.png)
+&emsp;&emsp;
+![Captcha](https://s2.ax1x.com/2019/08/23/msk6Z6.png)
+&emsp;&emsp;
+![Captcha](https://s2.ax1x.com/2019/08/23/msksqx.png)
+
+**Built-in Fonts:**
+
+![Captcha](https://s2.ax1x.com/2019/08/23/msAVSJ.png)
+&emsp;&emsp;
+![Captcha](https://s2.ax1x.com/2019/08/23/msAAW4.png)
+&emsp;&emsp;
+![Captcha](https://s2.ax1x.com/2019/08/23/msAkYF.png)
+
+---
+
+## 3. Installation
+
+### 3.1. Install via pip
 
 ```bash
 pip install easy-captcha-python
 ```
 
-### 3.2.从源码安装
+### 3.2. Install from source
 
 ```bash
-git clone https://github.com/yourusername/easy-captcha-python.git
+git clone https://github.com/Savlgoodman/EasyCaptcha-Python
 cd easy-captcha-python
 pip install -e .
 ```
 
 ---
 
-## 4.使用方法
+## 4. Usage
 
-### 4.1.快速开始
+### 4.1. Quick Start
 
 ```python
 from easy_captcha import SpecCaptcha
 from io import BytesIO
 
-# 三个参数分别为宽、高、位数
+# Three parameters: width, height, character count
 captcha = SpecCaptcha(130, 48, 5)
 
-# 获取验证码文本
+# Get captcha text
 code = captcha.text()
-print(f"验证码: {code}")
+print(f"Captcha: {code}")
 
-# 输出到文件
+# Write to file
 with open('captcha.png', 'wb') as f:
     stream = BytesIO()
     captcha.out(stream)
     f.write(stream.getvalue())
 ```
 
-### 4.2.在 Flask 中使用
+### 4.2. Use with Flask
 
 ```python
 from flask import Flask, session, make_response
@@ -111,12 +111,12 @@ app.secret_key = 'your-secret-key'
 
 @app.route('/captcha')
 def captcha():
-    # 创建验证码
+    # Create captcha
     cap = SpecCaptcha(130, 48, 5)
-    # 验证码文本存入session
+    # Store captcha text in session
     session['captcha'] = cap.text().lower()
 
-    # 输出图片
+    # Output image
     stream = BytesIO()
     cap.out(stream)
 
@@ -126,19 +126,19 @@ def captcha():
 
 @app.route('/verify/<code>')
 def verify(code):
-    # 获取session中的验证码
+    # Get captcha from session
     if code.lower() == session.get('captcha'):
-        return '验证成功'
-    return '验证失败'
+        return 'Verification successful'
+    return 'Verification failed'
 ```
 
-前端 HTML 代码：
+Frontend HTML:
 
 ```html
 <img src="/captcha" width="130px" height="48px" />
 ```
 
-### 4.3.在 Django 中使用
+### 4.3. Use with Django
 
 ```python
 from django.http import HttpResponse
@@ -147,17 +147,17 @@ from io import BytesIO
 
 def captcha(request):
     cap = SpecCaptcha(130, 48, 5)
-    # 验证码文本存入session
+    # Store captcha text in session
     request.session['captcha'] = cap.text().lower()
 
-    # 输出图片
+    # Output image
     stream = BytesIO()
     cap.out(stream)
 
     return HttpResponse(stream.getvalue(), content_type='image/png')
 ```
 
-### 4.4.在 FastAPI 中使用
+### 4.4. Use with FastAPI
 
 ```python
 from fastapi import FastAPI, Response
@@ -177,16 +177,16 @@ async def captcha():
     return Response(content=stream.getvalue(), media_type="image/png")
 ```
 
-### 4.5.前后端分离项目
+### 4.5. Frontend-Backend Separated Projects
 
-&emsp;前后端分离项目建议使用 base64 编码返回：
+For frontend-backend separated projects, it is recommended to return base64 encoded images:
 
 ```python
 from flask import Flask, jsonify, request
 import uuid
 
 app = Flask(__name__)
-# 这里使用字典模拟，生产环境建议使用Redis
+# Using dictionary as simulation, Redis is recommended for production
 captcha_store = {}
 
 @app.route('/captcha')
@@ -197,10 +197,10 @@ def get_captcha():
     code = cap.text().lower()
     key = str(uuid.uuid4())
 
-    # 存储验证码（生产环境建议存到Redis并设置过期时间）
+    # Store captcha (recommend storing in Redis with expiration in production)
     captcha_store[key] = code
 
-    # 返回key和base64图片
+    # Return key and base64 image
     return jsonify({
         'key': key,
         'image': cap.to_base64()
@@ -212,22 +212,22 @@ def login():
     ver_key = data.get('verKey')
     ver_code = data.get('verCode', '').lower()
 
-    # 验证验证码
+    # Verify captcha
     if ver_code == captcha_store.get(ver_key):
-        # 验证成功后删除
+        # Remove after successful verification
         captcha_store.pop(ver_key, None)
         return jsonify({'success': True})
-    return jsonify({'success': False, 'message': '验证码错误'})
+    return jsonify({'success': False, 'message': 'Captcha error'})
 ```
 
-前端使用示例：
+Frontend example:
 
 ```html
 <img id="verImg" width="130px" height="48px" />
 
 <script>
     var verKey;
-    // 获取验证码
+    // Fetch captcha
     fetch("/captcha")
         .then((res) => res.json())
         .then((data) => {
@@ -235,7 +235,7 @@ def login():
             document.getElementById("verImg").src = data.image;
         });
 
-    // 登录
+    // Login
     fetch("/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -253,9 +253,9 @@ def login():
 
 ---
 
-## 5.更多设置
+## 5. More Settings
 
-### 5.1.验证码类型
+### 5.1. Captcha Types
 
 ```python
 from easy_captcha import (
@@ -263,47 +263,48 @@ from easy_captcha import (
     ChineseGifCaptcha, ArithmeticCaptcha
 )
 
-# PNG类型
+# PNG type
 captcha = SpecCaptcha(130, 48, 5)
-code = captcha.text()  # 获取验证码文本
-chars = captcha.text_char()  # 获取验证码字符数组
+code = captcha.text()  # Get captcha text
+chars = captcha.text_char()  # Get captcha character array
 
-# GIF类型
+# GIF type
 captcha = GifCaptcha(130, 48, 5)
 
-# 中文类型
+# Chinese type
 captcha = ChineseCaptcha(130, 48, 4)
 
-# 中文GIF类型
+# Chinese GIF type
 captcha = ChineseGifCaptcha(130, 48, 4)
 
-# 算术类型
+# Arithmetic type
 captcha = ArithmeticCaptcha(130, 48, 2)
-captcha.len = 3  # 几位数运算，默认是两位
-formula = captcha.get_arithmetic_string()  # 获取运算公式：3+2=?
-result = captcha.text()  # 获取运算结果：5
+captcha.len = 3  # Number of digits for arithmetic, default is two
+formula = captcha.get_arithmetic_string()  # Get arithmetic formula: 3+2=?
+result = captcha.text()  # Get result: 5
 
-# 输出验证码
+# Output captcha
 from io import BytesIO
 stream = BytesIO()
 captcha.out(stream)
 ```
 
-> 注意：<br/> > &emsp;算术验证码的 len 表示是几位数运算，而其他验证码的 len 表示验证码的位数，算术验证码的 text()表示的是公式的结果，
-> 对于算术验证码，你应该把公式的结果存储到 session，而不是公式。
+> Note:<br/>
+> &emsp;For arithmetic captcha, `len` represents the number of digits in the operation, while for other captchas `len` represents the number of characters. The `text()` method for arithmetic captcha returns the result of the formula.
+> For arithmetic captcha, you should store the result in session, not the formula itself.
 
-### 5.2.验证码字符类型
+### 5.2. Character Types
 
-| 类型               | 描述           |
-| :----------------- | :------------- |
-| TYPE_DEFAULT       | 数字和字母混合 |
-| TYPE_ONLY_NUMBER   | 纯数字         |
-| TYPE_ONLY_CHAR     | 纯字母         |
-| TYPE_ONLY_UPPER    | 纯大写字母     |
-| TYPE_ONLY_LOWER    | 纯小写字母     |
-| TYPE_NUM_AND_UPPER | 数字和大写字母 |
+| Type              | Description           |
+| :----------------- | :-------------------- |
+| TYPE_DEFAULT       | Numbers and letters   |
+| TYPE_ONLY_NUMBER   | Numbers only          |
+| TYPE_ONLY_CHAR     | Letters only          |
+| TYPE_ONLY_UPPER    | Uppercase only        |
+| TYPE_ONLY_LOWER    | Lowercase only        |
+| TYPE_NUM_AND_UPPER | Numbers and uppercase |
 
-使用方法：
+Usage:
 
 ```python
 from easy_captcha import SpecCaptcha, TYPE_ONLY_NUMBER
@@ -312,14 +313,14 @@ captcha = SpecCaptcha(130, 48, 5)
 captcha.char_type = TYPE_ONLY_NUMBER
 ```
 
-> 只有`SpecCaptcha`和`GifCaptcha`设置才有效果。
+> Only effective for `SpecCaptcha` and `GifCaptcha`.
 
-### 5.3.字体设置
+### 5.3. Font Settings
 
-内置字体：
+Built-in fonts:
 
-| 字体    | 效果                                           |
-| :------ | :--------------------------------------------- |
+| Font   | Preview                                      |
+| :------ | :------------------------------------------- |
 | FONT_1  | ![](https://s2.ax1x.com/2019/08/23/msMe6U.png) |
 | FONT_2  | ![](https://s2.ax1x.com/2019/08/23/msMAf0.png) |
 | FONT_3  | ![](https://s2.ax1x.com/2019/08/23/msMCwj.png) |
@@ -331,22 +332,22 @@ captcha.char_type = TYPE_ONLY_NUMBER
 | FONT_9  | ![](https://s2.ax1x.com/2019/08/23/msMVpV.png) |
 | FONT_10 | ![](https://s2.ax1x.com/2019/08/23/msMZlT.png) |
 
-使用方法：
+Usage:
 
 ```python
 from easy_captcha import SpecCaptcha, FONT_1, FONT_2
 
 captcha = SpecCaptcha(130, 48, 5)
 
-# 设置内置字体
+# Set built-in font
 captcha.set_font(FONT_1, size=32)
 
-# 也可以使用系统字体（需要PIL.ImageFont支持）
+# You can also use system fonts (requires PIL.ImageFont support)
 from PIL import ImageFont
 captcha._font = ImageFont.truetype("arial.ttf", 32)
 ```
 
-### 5.4.输出 base64 编码
+### 5.4. Output base64
 
 ```python
 from easy_captcha import SpecCaptcha
@@ -354,11 +355,11 @@ from easy_captcha import SpecCaptcha
 captcha = SpecCaptcha(130, 48, 5)
 base64_str = captcha.to_base64()
 
-# 如果不想要base64的头部data:image/png;base64,
-base64_str = captcha.to_base64("")  # 加一个空的参数即可
+# If you don't want the base64 header "data:image/png;base64,"
+base64_str = captcha.to_base64("")  # Just pass an empty parameter
 ```
 
-### 5.5.输出到文件
+### 5.5. Output to File
 
 ```python
 from easy_captcha import SpecCaptcha
@@ -366,7 +367,7 @@ from io import BytesIO
 
 captcha = SpecCaptcha(130, 48, 5)
 
-# 输出到文件
+# Write to file
 with open('captcha.png', 'wb') as f:
     stream = BytesIO()
     captcha.out(stream)
@@ -375,39 +376,43 @@ with open('captcha.png', 'wb') as f:
 
 ---
 
-## 6.完整示例
+## 6. Complete Examples
 
-查看 `examples/` 目录获取更多示例：
+Check the `examples/` directory for more examples:
 
--   `basic_usage.py` - 基本使用示例
--   `all_types_demo.py` - 所有验证码类型演示
+-   `basic_usage.py` - Basic usage example
+-   `all_types_demo.py` - All captcha types demo
 
-运行示例：
+Run examples:
 
 ```bash
-# 运行基本示例
+# Run basic example
 python examples/basic_usage.py
 
-# 运行完整演示
+# Run full demo
 python examples/all_types_demo.py
 ```
 
-所有生成的验证码图片将保存到 `./out/` 目录。
+All generated captcha images will be saved to the `./out/` directory.
 
 ---
 
-## 7.许可证
+## 7. License
 
 Apache License 2.0
 
 ---
 
-## 8.致谢
+## 8. Acknowledgments
 
-本项目是 [EasyCaptcha](https://github.com/whvcse/EasyCaptcha) 的 Python 实现版本。
+This project is a Python implementation of [EasyCaptcha](https://github.com/whvcse/EasyCaptcha).
 
 ---
 
-## 9.贡献
+## 9. Contributing
 
-欢迎提交 Issue 和 Pull Request！
+Issues and Pull Requests are welcome!
+
+## 10. References
+
+For more detailed documentation, please refer to the [Usage Guide](https://github.com/Savlgoodman/EasyCaptcha-Python/blob/master/docs/EASYCAPTCHA-PYTHON-USAGE.md).
